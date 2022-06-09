@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var counter = 10;
+        var sum = function(a,b) {
+            return a + b + counter;
+        }
+
+        var Diff = function(a,b) {
+            return a - b - counter;
+        }
+
+        console.log(sum(3,4));
+        console.log(Diff(30,0));
+
+
+        //second approach -> IIFE (Immediately Invoked Function Expression)
+        
+        (function (){
+        
+            //To make the below part an IIFE, encapsulate it inside an anonymous function.
+
+            var counter = 10;
+
+            function sum(a,b){
+                return a + b + counter;
+            }
+
+            function Diff(a,b) {
+                return a - b - counter;
+            }
+
+            console.log(sum(3,4));
+            console.log(Diff(30,0));
+        }());   //Here, empty parenthesis means this function will be called immediately.
+
+        //Advantages of IIFE approach
+        //1. counter is a local variable. So, no global variable pollution.
+        //2. As soon as you move out of IIFE, counter variable will be collected by garbage collector.
+        //3. Much more cleaner code.
+        
+    </script>
+</body>
+</html>

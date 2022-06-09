@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        function myDisplayer(some)
+        {
+            document.getElementById("demo").innerHTML = some;
+        }
+
+        let myPromise = new Promise(function(resolve, reject)
+        {
+            let x = 0;
+
+            //producing code -> trying to change x value to 5.
+
+            if(x==0)
+            {
+               // resolve("OK");
+               setTimeout(() => {
+                   resolve("OK");
+               }, 5000)
+            }
+            else
+            {
+                reject("Error");
+            }
+        });
+
+        /*
+        myPromise.then(
+            function(value){myDisplayer(value);},
+            function(error){myDisplayer(error);}
+        )
+        */
+
+        /*
+        myPromise.then((value) => 
+        {
+            //console.log(value);
+            
+        }).catch((error) => 
+        {
+            console.log(error);
+        })
+        */
+
+        /*
+        myPromise.then((value) => 
+        {
+            return value;            //returning promise here.
+        }).then((val) =>            // receiving promise.
+        {
+            console.log(val);       
+        }).catch((error) => 
+        {
+            console.log(error);
+        })
+        */
+
+        //console.log(Promise.resolve("Success"));
+
+        Promise.resolve("Success").then((value) => 
+        {
+            console.log(value);
+        })
+
+        Promise.reject("Error").then((value) => 
+        {
+            console.log(value);
+        }).catch((error) => 
+        {
+            console.log(error);
+        })
+
+    </script>
+</body>
+</html>

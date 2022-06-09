@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Function statement
+        function addition()
+        {
+            var c = 7;
+            var d = 9;
+            var e = c + d;
+            document.write("Addition of "+c+" and "+d+" is "+e);
+        }
+
+        addition();
+
+
+        const AddedValue = function addition1(){
+            var c = 7;
+            var d = 9;
+            var e = c + d;
+            return e;
+        }
+        document.write(AddedValue() + "<br>");
+
+
+
+        //Function constructor
+        function add() {
+            this.c = 7;
+            this.d = 9;
+            this.e = this.c + this.d;
+            return this.e;
+        }
+
+        var addedVal = new add();
+        var addedVal1 = new add();
+
+        document.write(addedVal.e+"<br>");
+        document.write(addedVal.e);
+    </script>
+</body>
+</html>

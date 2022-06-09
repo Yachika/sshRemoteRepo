@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const map1 = new Map();
+        console.log(map1);
+
+        map1.set("Name", "Suraj");
+        map1.set("Age", 22);
+        map1.set("Nationality", "Indian");
+        map1.set("Profession", "Doctor");
+        console.log(map1);
+
+        console.log(map1.has('Profession'));
+        console.log(map1.get('Profession'));
+        console.log(map1.delete('Profession'));
+        console.log(map1);
+
+        let EmpKeysData = "";
+        for (const x of map1.keys())
+        {
+            EmpKeysData += x+" ";
+        }
+        console.log(EmpKeysData);
+
+        let EmpValuesData = "";
+        for(const x of map1.values())
+        {
+            EmpValuesData += x + " ";
+        }
+        console.log(EmpValuesData);
+
+        let EmpKeysEntries = "";
+        for(const x of map1.entries())
+        {
+            EmpKeysEntries += x + " ";
+        }
+        console.log(EmpKeysEntries);
+
+        map1.clear();
+        console.log(map1);
+
+    </script>
+</body>
+</html>

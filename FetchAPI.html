@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        //Get data from https://jsonplaceholder.typicode.com/users/
+
+        const url = "https://jsonplaceholder.typicode.com/users/";
+
+        //fetch() method that provides an easy, logical way to fetch resources asynchronously across the network.
+        //This kind of functionality was previously achieved using XMLHttpRequest
+        //The request can be of any APIs that returns the data of the format JSON or XML.
+
+        fetch(url)
+            .then((response) =>  {
+                return response.json();
+            })
+            .then((data) => {
+                let authors = data;
+                //document.getElementById("demo").innerHTML = authors;
+                //console.log(authors);
+                authors.map(function(author){
+                    const node = document.createElement("li");
+                    const textNode = document.createTextNode(`${author.name}`);
+                    node.appendChild(textNode);
+                    console.log(node);
+                    //document.getElementById("demo").innerHTML = node;
+                    //document.getElementById("myList").appendChild(node);
+                });
+            })
+            .catch(function(error){
+                console.log(error);
+            });
+    </script>
+</body>
+</html>

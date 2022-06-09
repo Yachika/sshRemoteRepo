@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function Person(first, last)
+        {
+            this.firstName = first;
+            this.lastName = last;
+        }
+
+        Person.nationality = "Indian";
+        const myFather = new Person("Raj", "Malhotra");
+        document.write(myFather.nationality+"<br>");    //undefined
+
+        //We can add a new property (like firstName and lastName) using prototype.
+        Person.prototype.nationality = "Indian";
+        document.write(myFather.nationality+"<br>");
+        document.write(myFather.firstName+"<br>");
+        document.write(myFather.lastName+"<br>");
+
+        Person.prototype.name = function(){
+            return this.firstName + " " + this.lastName;
+        }
+        document.write(myFather.name()+"<br>");
+
+        //We can access prototypes of an object using Constructor function only, not using object name.
+        //E.g., We can write Person.prototype.property_name, but we can't write myFather.prototype.property_name.
+        // If you want to use with object, then use _proto_, but this is deprecated.
+    </script>
+</body>
+</html>

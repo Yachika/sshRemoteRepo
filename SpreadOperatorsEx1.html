@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        const arrValue = ["My", "name", "is", "Jack"];
+        console.log(arrValue);
+        console.log(...arrValue);   //Spread operator used. It will print the array as string.
+
+        
+        const arr1 = ['one', 'two']
+        const arr2 = [...arr1, 'three', 'four']    //Spread operator is used to copy values from one array to another
+        const arr3 = [arr1, 'three', 'four']
+
+        console.log(arr2);
+        console.log(arr3);
+        */
+        
+
+        //Rest parameters (When spread operator is used as a parameter, it is called as rest parameter.)
+        let func = function(...args){
+            console.log(args);
+        }
+
+        func(3);
+        func(4,5,6);
+
+        //Depicting use of spread argument over normal argument.
+        //Spread operator passed as argument
+        function sum(x,y,z)
+        {
+            console.log(x+y+z);
+        }
+        const num1 = [1,2,3,4,5];
+        sum(...num1);
+
+        
+        //num2 is passed as whole array to sum()
+        function sum(x,y,z)
+        {
+            console.log(x+y+z);
+        }
+        const num2 = [1,2,3,4,5];
+        sum(num2);
+
+        
+        //Default parameters
+        function sum(x=3, y=5)
+        {
+            return x+y;
+        }
+        console.log(sum(5,15));
+        console.log(sum(7));
+        console.log(sum());
+        
+
+    </script>
+</body>
+</html>

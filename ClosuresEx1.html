@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    function greeting(message){
+        return function(name){
+            return message + ' ' + name;
+        }
+    }
+
+    //sayHi and sayHello are closures here.
+
+    let sayHi = greeting('Hi');
+    let sayHello = greeting('Hello');
+    console.log(sayHi);
+    console.log(sayHi('John'));
+    console.log(sayHello);
+    console.log(sayHello('John'));
+
+</script>
+</body>
+</html>

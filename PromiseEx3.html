@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        function myDisplayer(some)
+        {
+            document.getElementById("demo").innerHTML = some;
+        }
+
+        function myFunction()
+        {
+            return Promise.resolve("hello");
+        }
+
+        //below function is a normal function without async.
+        //By using async keyword, it has become similar to above function.
+        //Whenever we use keyword async with a function, it will make that function return a promise.
+        async function myFunction()
+        {
+            return "hello";
+        }
+
+        myFunction().then(
+            function(value){myDisplayer(value);},
+            function(error){myDisplayer(error);}
+        )
+    </script>
+</body>
+</html>

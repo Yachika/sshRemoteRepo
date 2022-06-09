@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function first() {
+            console.log("First function executed");
+        }
+
+        function second() {
+            console.log("Second function executed");
+        }
+
+        function third() {
+            console.log("Third function executed");
+        }
+
+        console.log("first function called");
+        first();
+        console.log("second function called");
+        setTimeout(second, 3000);
+        console.log("third function called");
+        third();
+    </script>
+</body>
+</html>

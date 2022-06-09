@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id = "method1"></p>
+    <p id = "method2"></p>
+    <p id = "method3"></p>
+
+    <script>
+        class Company
+        {
+            constructor(brand, revenue)
+            {
+                this.Compname = brand;
+                this.revenue = revenue;
+            }
+
+            get name()
+            {
+                return this.Compname;
+            }
+
+            set name(x)
+            {
+                this.Compname = x + " Pvt. Ltd.";
+            }
+
+            get revenue()
+            {
+                return this.revenueAmt;
+            }
+
+            set revenue(x)
+            {
+                this.revenueAmt = x;
+            }
+        }
+
+        myName = new Company("AW Company");
+        document.getElementById("method1").innerHTML = myName.Compname;
+
+        myName.name = "IKM TECH";
+        document.getElementById("method2").innerHTML = myName.Compname;
+
+        myName.revenue = '5k$';
+        document.getElementById("method3").innerHTML = myName.revenueAmt;
+
+    </script>
+</body>
+</html>
